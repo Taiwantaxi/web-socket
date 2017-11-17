@@ -6,11 +6,13 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO.listen(server);
 
+const PORT = process.env.PORT || 3000
+
 app.get('/',function(req, res){
   res.send('Hello World');
 });
 
-server.listen(3000, function(){
+server.listen(PORT, function(){
   console.log('Listening on 3000');
 })
 
